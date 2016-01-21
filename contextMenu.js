@@ -88,6 +88,9 @@ angular.module('ui.bootstrap.contextMenu', [])
                         $scope.$apply(function () {
                             if (nestedMenu) {
                                 openNestedMenu($event);
+                            } else {
+                                $(event.currentTarget).removeClass('context');
+                                removeContextMenus(level + 1);
                             }
                         });
                     });
